@@ -9,8 +9,6 @@ The codebase is designed to support:
 - **Aggregation + paper-ready plotting** from CSV logs.
 - **Evaluation robustness checks** (e.g., evaluation seed sweeps) and **evaluation-only sensitivity sweeps** over institutional parameters.
 
-> **Note on review anonymity:** if you are submitting under *double-blind* review, do **not** include a non-anonymous repository link in the anonymized manuscript. Instead, provide an anonymized archive or private link if the venue permits.
-
 ---
 
 ## Repository layout
@@ -22,8 +20,6 @@ The codebase is designed to support:
 - `results/` — aggregated CSV summaries (e.g., `summary.csv`, `learning_curves.csv`, `eval_seed_sweep*.csv`).
 - `figures/` — generated figures (created by the plotting scripts; not always tracked).
 - `robustness/` — robustness/sensitivity outputs (CSV + figures).
-
-If you intend this repo to be a lightweight *code* repository, consider moving `runs/` (and any checkpoints) to a release/Zenodo archive and keeping only `results/` + plotting code.
 
 ---
 
@@ -164,19 +160,9 @@ SSD depends on the legacy `gym` package, which emits warnings under NumPy 2. To 
 
 ---
 
-## Suggested repository hygiene (recommended before citing in a paper)
-
-1. **Add a license** (`LICENSE`) so others know how they may use the code.
-2. **Add a citation file** (`CITATION.cff`) and a BibTeX entry for the paper/preprint.
-3. **Add a `.gitignore`** and avoid committing `iml_ssd.egg-info/`, `__pycache__/`, and large run artifacts (`runs/` checkpoints, TensorBoard event files).
-4. **Tag a release** (e.g., `v1.0.0`) for the exact version used to generate reported results.
-5. **Pin the SSD dependency** (commit hash) in `scripts/install_ssd_no_ray.sh` to ensure long-term reproducibility.
-
----
-
 ## Citation
 
-If you use this code in academic work, please cite the accompanying paper (update the BibTeX once you have an arXiv link / DOI):
+If you use this code in academic work, please cite the accompanying paper:
 
 ```bibtex
 @article{alqithamiIML2026,
