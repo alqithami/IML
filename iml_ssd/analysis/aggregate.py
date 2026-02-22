@@ -1,0 +1,134 @@
+from __future__ import annotations
+
+import argparse
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Tuple
+
+import pandas as pd
+import yaml
+
+def _safe_read_csv(path: Path) -> pd.DataFrame:
+    """Read CSV robustly. Returns empty DF if file missing/empty/unparseable."""
+    try:
+        if (not path.exists()) or path.stat().st_size == 0:
+            return pd.DataFrame()
+        return pd.read_csv(path)
+    except pd.errors.EmptyDataError:
+        return pd.DataFrame()
+    except Exception:
+        return pd.DataFrame()
+
+
+
+def _load_yaml(path: Path) -> Dict[str, Any]:
+    with path.open("r", encoding="utf-8") as f:
+        return yaml.safe_load(f) or {}
+
+
+def collect_runs(runs_dir: Path) -> List[Path]:
+    return [p for p in runs_dir.iterdir() if p.is_dir() and (p / "config.yaml").exists()]
+
+
+def summarize_run(run_dir: Path, tail_episodes: int = 10) -> Dict[str, Any]:
+    cfg = _load_yaml(run_dir / "config.yaml")
+    env_name = str(cfg.get("env", {}).get("name", "unknown"))
+    num_agents = int(cfg.get("env", {}).get("num_agents", -1))
+    seed = int(cfg.get("train", {}).get("seed", -1))
+    iml_enabled = bool(cfg.get("iml", {}).get("enabled", False))
+
+    # episodes.csv
+    ep_path = run_dir / "episodes.csv"
+    ep_df = _safe_read_csv(ep_path)
+
+    # eval.csv
+    eval_path = run_dir / "eval.csv"
+    eval_df = _safe_read_csv(eval_path)
+
+    out: Dict[str, Any] = {
+        "run_name": run_dir.name,
+        "env": env_name,
+        "num_agents": num_agents,
+        "seed": seed,
+        "iml_enabled": iml_enabled,
+        "run_dir": str(run_dir),
+    }
+
+    if not ep_df.empty:
+        tail = ep_df.tail(tail_episodes)
+        out.update({
+            "train_return_mean": float(tail["return_mean"].mean()),
+            "train_return_sum": float(tail["return_sum"].mean()),
+            "train_gini": float(tail["return_gini"].mean()),
+            "train_iml_sanctions": float(tail.get("iml_sanctions", 0).mean()),
+            "train_iml_false_pos": float(tail.get("iml_false_pos", 0).mean()),
+        })
+        out["train_env_steps"] = int(ep_df["env_step"].max())
+    else:
+        out["train_env_steps"] = None
+
+    if not eval_df.empty:
+        out.update({
+            "eval_return_mean": float(eval_df["return_mean"].mean()),
+            "eval_return_sum": float(eval_df["return_sum"].mean()),
+            "eval_gini": float(eval_df["return_gini"].mean()),
+            "eval_iml_sanctions": float(eval_df.get("iml_sanctions", 0).mean()),
+            "eval_iml_false_pos": float(eval_df.get("iml_false_pos", 0).mean()),
+        })
+    return out
+
+
+def main():
+    p = argparse.ArgumentParser()
+    p.add_argument("--runs_dir", type=str, default="runs")
+    p.add_argument("--out_dir", type=str, default="results")
+    p.add_argument("--tail_episodes", type=int, default=10)
+    args = p.parse_args()
+
+    runs_dir = Path(args.runs_dir)
+    out_dir = Path(args.out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    run_dirs = collect_runs(runs_dir)
+    rows = []
+    for rd in run_dirs:
+        try:
+            rows.append(summarize_run(rd, tail_episodes=args.tail_episodes))
+        except Exception as e:
+            print(f"[WARN] Failed to summarize {rd}: {e}")
+
+    df = pd.DataFrame(rows)
+    df.to_csv(out_dir / "summary.csv", index=False)
+
+    # Also concatenate learning curves if present
+    curve_rows = []
+    for rd in run_dirs:
+        ep_path = rd / "episodes.csv"
+        if not ep_path.exists():
+            continue
+        cfg = _load_yaml(rd / "config.yaml")
+        env_name = str(cfg.get("env", {}).get("name", "unknown"))
+        num_agents = int(cfg.get("env", {}).get("num_agents", -1))
+        seed = int(cfg.get("train", {}).get("seed", -1))
+        iml_enabled = bool(cfg.get("iml", {}).get("enabled", False))
+
+        ep_df = _safe_read_csv(ep_path)
+        if ep_df.empty:
+            continue
+        ep_df["run_name"] = rd.name
+        ep_df["env"] = env_name
+        ep_df["num_agents"] = num_agents
+        ep_df["seed"] = seed
+        ep_df["iml_enabled"] = iml_enabled
+        curve_rows.append(ep_df)
+
+    if curve_rows:
+        curves = pd.concat(curve_rows, ignore_index=True)
+        curves.to_csv(out_dir / "learning_curves.csv", index=False)
+
+    print(f"Wrote {out_dir/'summary.csv'}")
+    if curve_rows:
+        print(f"Wrote {out_dir/'learning_curves.csv'}")
+
+
+if __name__ == "__main__":
+    main()
