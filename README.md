@@ -2,6 +2,10 @@
 
 This repository provides an experiment pipeline and reference implementation of an **Institutional Monitoring and Ledger (IML)** wrapper for **sequential social dilemma** environments (**Harvest** and **Cleanup**) from *Sequential Social Dilemma Games* (SSD). The key idea is to keep the **base Markov game** intact while adding an **auditable institutional layer** that (i) monitors norm-relevant events, (ii) logs evidence to a ledger, and (iii) applies **delayed, contestable settlement** (sanctions/remedies).
 
+<p align="center">
+  <img src="figures/graphical_abstract.png" width="500" alt="Simulation Environment">
+</p>
+
 > **Important:** GitHub hosts the code, but it does not “run” the experiments for you. To execute anything, you must **clone/download the repository to your machine** and run the commands locally.
 
 ---
