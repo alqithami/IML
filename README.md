@@ -171,11 +171,12 @@ If you use this code in academic work, please cite the accompanying manuscript a
   note    = {Manuscript under review. Code: https://github.com/alqithami/IML}
 }
 
-@inproceedings{leibo2017ssd,
-  title   = {Multi-Agent Reinforcement Learning in Sequential Social Dilemmas},
-  author  = {Leibo, Joel Z. and others},
-  booktitle = {Proceedings of the 16th Conference on Autonomous Agents and Multiagent Systems (AAMAS)},
-  year    = {2017}
+@inproceedings{leibo2017multi,
+  title={Multi-agent Reinforcement Learning in Sequential Social Dilemmas},
+  author={Leibo, Joel Z and Zambaldi, Vinicius and Lanctot, Marc and Marecki, Janusz and Graepel, Thore},
+  booktitle={Proceedings of the 16th Conference on Autonomous Agents and MultiAgent Systems},
+  pages={464--473},
+  year={2017}
 }
 ```
 
