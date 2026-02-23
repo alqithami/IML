@@ -110,9 +110,6 @@ def main():
     env_kwargs = cfg.get("env", {}).get("kwargs", {}) or {}
     env = make_ssd_env(env_name, num_agents=num_agents, seed=seed, **env_kwargs)
 
-    # Fixed-horizon episodes (SSD forks may not signal termination reliably)
-    max_episode_len = int(cfg.get('env', {}).get('max_episode_len', 2000))
-
     iml_cfg = _build_iml_config(cfg)
     if iml_cfg.enabled:
         env = IMLWrapper(env, iml_cfg, run_dir=run_dir, seed=seed)
@@ -178,12 +175,6 @@ def main():
                 d_t = torch.zeros((len(agent_ids),), dtype=torch.float32, device=device)
                 episode_done = False
 
-            # Time-limit episode segmentation (ensures episodic logging & evaluation)
-            time_limit = (ep_len + 1) >= max_episode_len
-            if (not episode_done) and time_limit:
-                episode_done = True
-                d_t = torch.ones((len(agent_ids),), dtype=torch.float32, device=device)
-
             # Store transition
             buf.add(
                 obs=obs_t,
@@ -225,7 +216,6 @@ def main():
                     "iml_false_pos": iml_counts["false_pos"],
                     "iml_overturned": iml_counts["overturned"],
                     "time_seconds": time.time() - start_time,
-                    "time_limit": bool(ep_len >= max_episode_len),
                 }
                 logger.log_episode(ep_idx, ep_row)
                 ep_idx += 1

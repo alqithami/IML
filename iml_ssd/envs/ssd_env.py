@@ -110,68 +110,11 @@ def get_action_space_n(env) -> int:
     raise SSDEnvError(f"Could not infer discrete action space size from action_space={type(asp)}")
 
 
-def _extract_rgb_obs(obs_entry: Any) -> np.ndarray:
-    """Extract an RGB array (H,W,C) from SSD per-agent observations.
-
-    SSD forks/versions may return per-agent obs as:
-      - np.ndarray (H,W,C)
-      - dict containing an array under keys like 'curr_obs', 'rgb', 'image', etc.
-      - nested dicts
-      - tuples/lists containing arrays
-
-    This helper makes the pipeline robust to all of the above.
-    """
-    if isinstance(obs_entry, np.ndarray):
-        return obs_entry
-
-    if isinstance(obs_entry, (list, tuple)):
-        # Try each entry until we find an ndarray
-        for v in obs_entry:
-            try:
-                arr = _extract_rgb_obs(v)
-                if isinstance(arr, np.ndarray):
-                    return arr
-            except Exception:
-                pass
-
-    if isinstance(obs_entry, dict):
-        # Common keys used in dict observation spaces
-        for k in ("curr_obs", "rgb", "image", "observation", "obs", "state", "board", "pixels"):
-            v = obs_entry.get(k, None)
-            if isinstance(v, np.ndarray):
-                return v
-
-        # Fallback: first 3D ndarray value
-        for v in obs_entry.values():
-            if isinstance(v, np.ndarray) and v.ndim == 3:
-                return v
-
-        # Fallback: recurse into nested dicts
-        for v in obs_entry.values():
-            if isinstance(v, dict):
-                try:
-                    return _extract_rgb_obs(v)
-                except Exception:
-                    pass
-
-    raise SSDEnvError(
-        f"Unsupported observation type {type(obs_entry)}. "
-        f"Expected np.ndarray or dict/list/tuple containing an ndarray."
-    )
-
-
-def preprocess_obs(obs: Any) -> np.ndarray:
-    """Convert SSD obs (array or dict containing array) to float32 in [0,1]."""
-    obs_arr = _extract_rgb_obs(obs)
-
-    if obs_arr.dtype != np.float32:
-        obs_arr = obs_arr.astype(np.float32)
-
-    # Many SSD observations are uint8 0..255
-    try:
-        if obs_arr.max() > 1.5:
-            obs_arr = obs_arr / 255.0
-    except Exception:
-        pass
-
-    return obs_arr
+def preprocess_obs(obs: np.ndarray) -> np.ndarray:
+    """Convert uint8 RGB to float32 in [0,1]."""
+    if obs.dtype != np.float32:
+        obs = obs.astype(np.float32)
+    # Many SSD observations are 0..255
+    if obs.max() > 1.5:
+        obs = obs / 255.0
+    return obs

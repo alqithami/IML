@@ -86,9 +86,6 @@ def main():
     env_kwargs = cfg.get("env", {}).get("kwargs", {}) or {}
     env = make_ssd_env(env_name, num_agents=num_agents, seed=seed, **env_kwargs)
 
-    # Fixed-horizon episodes (SSD forks may not signal termination reliably)
-    max_episode_len = int(cfg.get('env', {}).get('max_episode_len', 2000))
-
     iml_cfg = _build_iml_config(cfg)
     if iml_cfg.enabled:
         env = IMLWrapper(env, iml_cfg, run_dir=None, seed=seed)
@@ -134,12 +131,6 @@ def main():
                     if agent_keys:
                         episode_done = all(bool(dones[k]) for k in agent_keys)
 
-            # Time-limit segmentation
-            time_limit = False
-            if (not episode_done) and ep_len >= max_episode_len:
-                episode_done = True
-                time_limit = True
-
             if episode_done:
                 returns_list = [ep_returns[aid] for aid in agent_ids]
                 out_csv.write({
@@ -153,7 +144,6 @@ def main():
                     "iml_sanctions": iml_counts["sanctions"],
                     "iml_false_pos": iml_counts["false_pos"],
                     "iml_overturned": iml_counts["overturned"],
-                    "time_limit": time_limit,
                 })
                 out_csv.flush()
                 break

@@ -8,16 +8,6 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def _safe_read_csv(path: Path) -> Optional[pd.DataFrame]:
-    """Return DF if CSV exists + is non-empty; otherwise None."""
-    try:
-        if (not path.exists()) or path.stat().st_size == 0:
-            return None
-        return pd.read_csv(path)
-    except pd.errors.EmptyDataError:
-        return None
-
-
 
 def _ensure_dir(p: Path) -> None:
     p.mkdir(parents=True, exist_ok=True)
@@ -164,14 +154,12 @@ def main():
     summary_path = results_dir / "summary.csv"
 
     if curves_path.exists():
-        curves = _safe_read_csv(curves_path)
-        if curves is not None and (not curves.empty):
-            plot_learning_curves(curves, out_dir, bin_size=args.bin_size)
+        curves = pd.read_csv(curves_path)
+        plot_learning_curves(curves, out_dir, bin_size=args.bin_size)
 
     if summary_path.exists():
-        summary = _safe_read_csv(summary_path)
-        if summary is not None and (not summary.empty):
-            plot_summary(summary, out_dir)
+        summary = pd.read_csv(summary_path)
+        plot_summary(summary, out_dir)
 
     print(f"Plots saved to {out_dir}")
 

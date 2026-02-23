@@ -7,18 +7,6 @@ from typing import Any, Dict, List, Optional, Tuple
 import pandas as pd
 import yaml
 
-def _safe_read_csv(path: Path) -> pd.DataFrame:
-    """Read CSV robustly. Returns empty DF if file missing/empty/unparseable."""
-    try:
-        if (not path.exists()) or path.stat().st_size == 0:
-            return pd.DataFrame()
-        return pd.read_csv(path)
-    except pd.errors.EmptyDataError:
-        return pd.DataFrame()
-    except Exception:
-        return pd.DataFrame()
-
-
 
 def _load_yaml(path: Path) -> Dict[str, Any]:
     with path.open("r", encoding="utf-8") as f:
@@ -38,11 +26,11 @@ def summarize_run(run_dir: Path, tail_episodes: int = 10) -> Dict[str, Any]:
 
     # episodes.csv
     ep_path = run_dir / "episodes.csv"
-    ep_df = _safe_read_csv(ep_path)
+    ep_df = pd.read_csv(ep_path) if ep_path.exists() else pd.DataFrame()
 
     # eval.csv
     eval_path = run_dir / "eval.csv"
-    eval_df = _safe_read_csv(eval_path)
+    eval_df = pd.read_csv(eval_path) if eval_path.exists() else pd.DataFrame()
 
     out: Dict[str, Any] = {
         "run_name": run_dir.name,
@@ -111,9 +99,7 @@ def main():
         seed = int(cfg.get("train", {}).get("seed", -1))
         iml_enabled = bool(cfg.get("iml", {}).get("enabled", False))
 
-        ep_df = _safe_read_csv(ep_path)
-        if ep_df.empty:
-            continue
+        ep_df = pd.read_csv(ep_path)
         ep_df["run_name"] = rd.name
         ep_df["env"] = env_name
         ep_df["num_agents"] = num_agents

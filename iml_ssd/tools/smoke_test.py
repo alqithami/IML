@@ -5,7 +5,7 @@ import random
 
 import numpy as np
 
-from iml_ssd.envs.ssd_env import get_action_space_n, get_agent_ids, make_ssd_env, preprocess_obs
+from iml_ssd.envs.ssd_env import get_action_space_n, get_agent_ids, make_ssd_env
 
 
 def main():
@@ -24,8 +24,7 @@ def main():
     agent_ids = get_agent_ids(obs)
     n_actions = get_action_space_n(env)
 
-    o0 = preprocess_obs(obs[agent_ids[0]])
-    print(f"Env={args.env}, agents={agent_ids}, n_actions={n_actions}, obs_shape={o0.shape}, raw_obs_type={type(obs[agent_ids[0]]).__name__}")
+    print(f"Env={args.env}, agents={agent_ids}, n_actions={n_actions}, obs_shape={obs[agent_ids[0]].shape}")
 
     for t in range(args.steps):
         action_dict = {aid: int(np.random.randint(0, n_actions)) for aid in agent_ids}

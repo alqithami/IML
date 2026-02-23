@@ -1,81 +1,85 @@
-# IML: Institutional Monitoring & Ledger (IML) for Sequential Social Dilemmas
+# IML: Institutional Monitoring & Ledger for Sequential Social Dilemmas
 
-This repository contains an experiment pipeline and reference implementation of an **Institutional Monitoring and Ledger (IML)** wrapper for **sequential social dilemma** environments (**Harvest** and **Cleanup**) from *Sequential Social Dilemma Games* (SSD). The core idea is to separate **base game rewards** from an **auditable institutional layer** that (i) monitors norm-relevant events, (ii) logs evidence to a ledger, and (iii) applies **delayed, contestable settlement** (sanctions/remedies).
+This repository provides an experiment pipeline and reference implementation of an **Institutional Monitoring and Ledger (IML)** wrapper for **sequential social dilemma** environments (**Harvest** and **Cleanup**) from *Sequential Social Dilemma Games* (SSD). The key idea is to keep the **base Markov game** intact while adding an **auditable institutional layer** that (i) monitors norm-relevant events, (ii) logs evidence to a ledger, and (iii) applies **delayed, contestable settlement** (sanctions/remedies).
 
-The codebase is designed to support:
-
-- **Multi-seed MARL training** (parameter-shared PPO) under Baseline vs IML conditions.
-- **Auditable institutional traces** (violations, detections, false positives, review overturns, net sanctions).
-- **Aggregation + paper-ready plotting** from CSV logs.
-- **Evaluation robustness checks** (e.g., evaluation seed sweeps) and **evaluation-only sensitivity sweeps** over institutional parameters.
+> **Important:** GitHub hosts the code, but it does not “run” the experiments for you. To execute anything, you must **clone/download the repository to your machine** and run the commands locally.
 
 ---
 
-## Repository layout
+## Repository layout (high level)
 
-- `iml_ssd/` — core library code (env wrapper, PPO training, evaluation, analysis).
+- `iml_ssd/` — core library code (IML wrapper, PPO training, evaluation, analysis).
 - `configs/` — YAML configs for Baseline/IML in Harvest/Cleanup.
-- `scripts/` — convenience scripts (SSD install without Ray/RLlib, multi-seed sweeps).
-- `runs/` — raw run outputs (per-seed logs/checkpoints). **Large**.
-- `results/` — aggregated CSV summaries (e.g., `summary.csv`, `learning_curves.csv`, `eval_seed_sweep*.csv`).
-- `figures/` — generated figures (created by the plotting scripts; not always tracked).
-- `robustness/` — robustness/sensitivity outputs (CSV + figures).
+- `scripts/` — helper scripts (SSD install without Ray/RLlib, multi-seed sweep).
+- `runs/` — raw run outputs (per-seed logs/checkpoints). **Large; typically not committed.**
+- `results/` — aggregated CSV summaries written by the analysis scripts.
+- `figures/` — generated figures written by the plotting scripts.
 
 ---
 
-## Quickstart
+## System requirements
 
-### 0) Create a clean environment
+- **Python:** 3.9 (SSD is not compatible with newer Python/Gym/NumPy stacks)
+- **OS:** macOS or Linux recommended  
+  - **Windows:** use **WSL2 (Ubuntu)** or another Linux environment; the scripts are `bash`-based.
+- **Tools:** `git`, and either **conda/miniforge** (recommended) or a compatible Python environment.
 
-**Option A: Conda (recommended)**
+---
 
+## Quickstart (copy/paste)
+
+### 1) Clone the repository
+
+```bash
+git clone https://github.com/alqithami/IML.git
+cd IML
+```
+
+If you do not have `git`, install it first (or use GitHub’s “Download ZIP”, then unzip and `cd` into the folder).
+
+### 2) Create and activate a clean environment
+
+**Conda / Miniforge (recommended):**
 ```bash
 conda create -n imlssd python=3.9 -y
 conda activate imlssd
 python -m pip install --upgrade pip setuptools wheel
 ```
 
-**Option B: Use `environment.yml`**
+> Tip: if your shell shows `(base)` and `(imlssd)` at the same time, run `conda deactivate` once, then `conda activate imlssd` to avoid mixing environments.
 
-```bash
-conda env create -f environment.yml
-conda activate imlssd
-```
-
-### 1) Install SSD (without Ray/RLlib)
+### 3) Install SSD (without Ray/RLlib)
 
 From the repo root:
-
 ```bash
 bash scripts/install_ssd_no_ray.sh
 ```
 
-This clones SSD into `sequential_social_dilemma_games/`, patches optional RLlib imports, and installs `social-dilemmas` in editable mode.
+This will:
+- clone SSD into `sequential_social_dilemma_games/`,
+- patch RLlib imports to be optional, and
+- install `social-dilemmas` in editable mode.
 
-### 2) Install this package
+### 4) Install this package
 
 ```bash
 python -m pip install -r requirements.txt
 python -m pip install -e .
 ```
 
-### 3) Sanity check (smoke test)
+### 5) Run a smoke test
 
 ```bash
 python -m iml_ssd.tools.smoke_test --env cleanup --num_agents 5 --steps 50
 ```
 
-If this fails with `No module named 'cv2'`, make sure `opencv-python` is installed in your active env:
-
-```bash
-python -m pip install "numpy<2" "opencv-python<4.13"
-```
+If that works, your environment is set up correctly.
 
 ---
 
 ## Reproducing the main experiments
 
-### Run the full multi-seed sweep
+### 1) Run the full multi-seed sweep
 
 This runs **Harvest + Cleanup** × **Baseline + IML** for training seeds `0..4`:
 
@@ -83,17 +87,19 @@ This runs **Harvest + Cleanup** × **Baseline + IML** for training seeds `0..4`:
 bash scripts/run_sweep.sh
 ```
 
-All raw outputs are written under `runs/`.
+Raw outputs are written under `runs/` (one folder per run).
 
-### Aggregate learning curves and evaluation summaries
+### 2) Aggregate learning curves and evaluation summaries
 
 ```bash
 python -m iml_ssd.analysis.aggregate --runs_dir runs --out_dir results
 ```
 
-This writes (at minimum) `results/summary.csv` and `results/learning_curves.csv`.
+This writes (at minimum):
+- `results/summary.csv`
+- `results/learning_curves.csv`
 
-### Generate figures
+### 3) Generate figures
 
 ```bash
 python -m iml_ssd.analysis.plot --results_dir results --out_dir figures
@@ -101,68 +107,61 @@ python -m iml_ssd.analysis.plot --results_dir results --out_dir figures
 
 ---
 
-## Rebuilding evaluation-seed sweeps
+## Evaluation-seed sweep rebuild (optional)
 
-If you have per-run evaluation-seed CSVs at:
-
+If you have per-run evaluation-seed files such as:
 - `runs/<run_name>/eval_seed0.csv`
 - `runs/<run_name>/eval_seed1.csv`
 - …
 
-then you can rebuild the consolidated sweep tables with:
+then you can rebuild consolidated tables with:
 
 ```bash
 python rebuild_eval_seed_sweep.py
 ```
 
 This writes:
-
 - `results/eval_seed_sweep.csv` (one row per run × eval seed)
-- `results/eval_seed_sweep_agg.csv` (aggregated mean/std over eval seeds, per run)
+- `results/eval_seed_sweep_agg.csv` (mean/std over eval seeds, per run)
 
 ---
 
 ## Compute backend notes (CPU / CUDA / Apple Silicon)
 
-This project uses PyTorch. You can check which accelerator backend is available:
+This project uses PyTorch. You can check available acceleration:
 
 ```bash
 python -c 'import torch; print("torch", torch.__version__); print("cuda", torch.cuda.is_available()); print("mps", hasattr(torch.backends,"mps") and torch.backends.mps.is_available())'
 ```
 
-- **CUDA**: supported if `torch.cuda.is_available()` is `True`.
-- **Apple Silicon (MPS)**: supported if `torch.backends.mps.is_available()` is `True`.
-- **CPU-only**: works, but training sweeps are compute-intensive.
+- **CUDA** is used if `torch.cuda.is_available()` is `True`.
+- **Apple Silicon (MPS)** is used if `torch.backends.mps.is_available()` is `True`.
+- **CPU-only** works, but sweeps are compute-intensive.
 
 ---
 
 ## Troubleshooting
 
 ### `No module named 'social_dilemmas'`
-
 You likely skipped SSD installation (or installed in a different environment). Re-run:
-
 ```bash
 bash scripts/install_ssd_no_ray.sh
 ```
 
 ### `No module named 'cv2'`
-
-Install OpenCV into the *active* environment:
-
+Install OpenCV into the **active** environment:
 ```bash
 python -m pip install "numpy<2" "opencv-python<4.13"
 ```
 
 ### Gym / NumPy warnings
-
-SSD depends on the legacy `gym` package, which emits warnings under NumPy 2. To avoid incompatibilities, this repo constrains NumPy to `<2`.
+SSD depends on the legacy `gym` package, which emits warnings under NumPy 2. This repo constrains NumPy to `<2` for compatibility.
 
 ---
 
 ## Citation
 
-If you use this code in academic work, please cite the accompanying paper:
+If you use this code in academic work, please cite the accompanying manuscript and the SSD benchmark:
 
 ```bibtex
 @article{alqithamiIML2026,
@@ -171,10 +170,23 @@ If you use this code in academic work, please cite the accompanying paper:
   year    = {2026},
   note    = {Manuscript under review. Code: https://github.com/alqithami/IML}
 }
+
+@inproceedings{leibo2017ssd,
+  title   = {Multi-Agent Reinforcement Learning in Sequential Social Dilemmas},
+  author  = {Leibo, Joel Z. and others},
+  booktitle = {Proceedings of the 16th Conference on Autonomous Agents and Multiagent Systems (AAMAS)},
+  year    = {2017}
+}
 ```
+
+---
+
+## License
+
+This repository is released under the **MIT License**. See `LICENSE`.
 
 ---
 
 ## Acknowledgements
 
-This repository builds on *Sequential Social Dilemma Games* (SSD) by Leibo et al. and related work on sequential social dilemmas.
+This repository builds on *Sequential Social Dilemma Games* (SSD) and the sequential social dilemmas introduced by Leibo et al.
