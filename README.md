@@ -28,7 +28,7 @@ This repository provides a reference implementation of an **Institutional Monito
 
 ---
 
-## Quickstart (copy/paste)
+## Quickstart:
 
 ### 1) Clone the repository
 
