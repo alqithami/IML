@@ -192,4 +192,4 @@ This repository is released under the **MIT License**. See `LICENSE`.
 
 ## Acknowledgements
 
-This repository builds on *Sequential Social Dilemma Games* (SSD) and the sequential social dilemmas introduced by Leibo et al.
+This repository builds on *Sequential Social Dilemma Games* (SSD) and the sequential social dilemmas introduced by Leibo et. al. (2017) citated above.
