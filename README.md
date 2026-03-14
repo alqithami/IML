@@ -61,6 +61,7 @@ This will:
 - clone SSD into `sequential_social_dilemma_games/`,
 - patch RLlib imports to be optional, and
 - install `social-dilemmas` in editable mode.
+pleae make sure this is added correctly for the reat of the rapper to work.
 
 ### 4) Install this package
 
