@@ -1,0 +1,15 @@
+LICENSE.md
+README.md
+pyproject.toml
+setup.py
+social_dilemmas/__init__.py
+social_dilemmas/maps.py
+social_dilemmas/utility_funcs.py
+social_dilemmas.egg-info/PKG-INFO
+social_dilemmas.egg-info/SOURCES.txt
+social_dilemmas.egg-info/dependency_links.txt
+social_dilemmas.egg-info/requires.txt
+social_dilemmas.egg-info/top_level.txt
+tests/test_envs.py
+tests/test_pettingzoo.py
+tests/test_rollout.py
