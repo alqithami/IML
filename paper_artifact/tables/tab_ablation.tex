@@ -1,0 +1,23 @@
+\begin{table}[htbp]
+\caption{Ablation study: effect of individual IML components on converged training metrics (mean $\pm$ std over 5 seeds).}
+\label{tab:ablation}
+\centering
+\footnotesize
+\begin{tabular}{llrr}
+\toprule
+\textbf{Env.} & \textbf{Condition} & \textbf{Entropy} & \textbf{Value Loss} \\
+\midrule
+  Cleanup & Baseline (PPO) & 0.510 $\pm$ 0.134 & 0.0623 $\pm$ 0.0819 \\
+   & Monitor Only & 0.478 $\pm$ 0.299 & 5.64 $\pm$ 12.48 \\
+   & Sanction (no review) & 1.210 $\pm$ 0.240 & 0.0695 $\pm$ 0.0390 \\
+   & IML (Full) & 1.338 $\pm$ 0.032 & 0.1091 $\pm$ 0.0233 \\
+   & High Review (p=0.8) & 1.276 $\pm$ 0.322 & 0.0528 $\pm$ 0.0218 \\
+\midrule
+  Harvest & Baseline (PPO) & 0.658 $\pm$ 0.077 & 0.4673 $\pm$ 0.0347 \\
+   & Monitor Only & 0.303 $\pm$ 0.192 & 3.50 $\pm$ 7.81 \\
+   & Sanction (no review) & 1.421 $\pm$ 0.007 & 0.0410 $\pm$ 0.0155 \\
+   & IML (Full) & 1.251 $\pm$ 0.059 & 0.4524 $\pm$ 0.0835 \\
+   & High Review (p=0.8) & 1.514 $\pm$ 0.011 & 0.0206 $\pm$ 0.0132 \\
+\bottomrule
+\end{tabular}
+\end{table}

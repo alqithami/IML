@@ -1,0 +1,419 @@
+\begin{thebibliography}{999}
+
+\bibitem[Ostrom(1990)]{Ostrom1990}
+Ostrom, E.
+\newblock {\em Governing the Commons: The Evolution of Institutions for
+  Collective Action}; Cambridge University Press,  1990.
+
+\bibitem[Leibo et~al.(2017)Leibo, Zambaldi, Lanctot, Marecki, and
+  Graepel]{Leibo2017SSD}
+Leibo, J.Z.; Zambaldi, V.; Lanctot, M.; Marecki, J.; Graepel, T.
+\newblock Multi-agent Reinforcement Learning in Sequential Social Dilemmas.
+\newblock In Proceedings of the 16th International Conference on Autonomous
+  Agents and Multiagent Systems (AAMAS),  2017, pp. 464--473.
+
+\bibitem[Dafoe et~al.(2020)Dafoe, Hughes, Bachrach, Collins, McKee, Leibo,
+  Larson, and Graepel]{Dafoe2020CooperativeAI}
+Dafoe, A.; Hughes, E.; Bachrach, Y.; Collins, T.; McKee, K.R.; Leibo, J.Z.;
+  Larson, K.; Graepel, T.
+\newblock Open Problems in Cooperative {AI}.
+\newblock arXiv:2012.08630,  2020.
+
+\bibitem[Leibo et~al.(2021)Leibo, Due{\~n}ez-Guzman, Vezhnevets, Agapiou,
+  Sunehag, Koster, Matyas, Beattie, Mordatch, and Graepel]{Leibo2021MeltingPot}
+Leibo, J.Z.; Due{\~n}ez-Guzman, E.A.; Vezhnevets, A.S.; Agapiou, J.P.; Sunehag,
+  P.; Koster, R.; Matyas, J.; Beattie, C.; Mordatch, I.; Graepel, T.
+\newblock Scalable Evaluation of Multi-Agent Reinforcement Learning with
+  Melting Pot.
+\newblock In Proceedings of the International Conference on Machine Learning
+  (ICML). PMLR,  2021, pp. 6187--6199.
+
+\bibitem[Thaler and Sunstein(2008)]{ThalerSunstein2008}
+Thaler, R.H.; Sunstein, C.R.
+\newblock {\em Nudge: Improving Decisions About Health, Wealth, and Happiness};
+  Yale University Press: New Haven, CT,  2008.
+
+\bibitem[Yeung(2017)]{Yeung2017Hypernudge}
+Yeung, K.
+\newblock ``Hypernudge'': Big Data as a Mode of Regulation by Design.
+\newblock {\em Information, Communication \& Society} {\bf 2017}, {\em
+  20},~118--136.
+\newblock {\url{https://doi.org/10.1080/1369118X.2016.1186713}}.
+
+\bibitem[Susser et~al.(2019)Susser, Roessler, and
+  Nissenbaum]{SusserRoesslerNissenbaum2019}
+Susser, D.; Roessler, B.; Nissenbaum, H.
+\newblock Online Manipulation: Hidden Influences in a Digital World.
+\newblock {\em Georgetown Law Technology Review} {\bf 2019}, {\em 4},~1--45.
+\newblock Cite as: 4 Geo. L. Tech. Rev. 1 (2019).
+
+\bibitem[Gray et~al.(2018)Gray, Kou, Battles, Hoggatt, and
+  Toombs]{Gray2018DarkPatterns}
+Gray, C.M.; Kou, Y.; Battles, B.; Hoggatt, J.; Toombs, A.L.
+\newblock The Dark (Patterns) Side of {UX} Design.
+\newblock In Proceedings of the 2018 CHI Conference on Human Factors in
+  Computing Systems, New York, NY, USA,  2018.
+\newblock CHI 2018.
+
+\bibitem[Mathur et~al.(2019)Mathur, Acar, Friedman, Lucherini, Mayer, Chetty,
+  and Narayanan]{Mathur2019DarkPatternsScale}
+Mathur, A.; Acar, G.; Friedman, M.J.; Lucherini, E.; Mayer, J.; Chetty, M.;
+  Narayanan, A.
+\newblock Dark Patterns at Scale: Findings from a Crawl of 11K Shopping
+  Websites.
+\newblock {\em Proceedings of the ACM on Human-Computer Interaction} {\bf
+  2019}, {\em 3},~81:1--81:32.
+\newblock {\url{https://doi.org/10.1145/3359183}}.
+
+\bibitem[Tyler(1990)]{Tyler1990}
+Tyler, T.R.
+\newblock {\em Why People Obey the Law}; Yale University Press: New Haven, CT,
+  1990.
+
+\bibitem[Kroll et~al.(2017)Kroll, Huey, Barocas, Felten, Reidenberg, Robinson,
+  and Yu]{Kroll2017AccountableAlgorithms}
+Kroll, J.A.; Huey, J.; Barocas, S.; Felten, E.W.; Reidenberg, J.R.; Robinson,
+  D.G.; Yu, H.
+\newblock Accountable Algorithms.
+\newblock {\em University of Pennsylvania Law Review} {\bf 2017}, {\em
+  165},~633--705.
+
+\bibitem[Raji et~al.(2020)Raji, Smart, White, Mitchell, Gebru, Hutchinson,
+  Smith-Loud, Theron, and Barnes]{Raji2020Auditing}
+Raji, I.D.; Smart, A.; White, R.N.; Mitchell, M.; Gebru, T.; Hutchinson, B.;
+  Smith-Loud, J.; Theron, D.; Barnes, P.
+\newblock Closing the {AI} Accountability Gap: Defining an End-to-End Framework
+  for Internal Algorithmic Auditing.
+\newblock In Proceedings of the 2020 Conference on Fairness, Accountability,
+  and Transparency (FAccT '20). ACM,  2020, pp. 33--44.
+\newblock {\url{https://doi.org/10.1145/3351095.3372873}}.
+
+\bibitem[Nissenbaum(2004)]{Nissenbaum2004}
+Nissenbaum, H.
+\newblock Privacy as Contextual Integrity.
+\newblock {\em Washington Law Review} {\bf 2004}, {\em 79},~119--157.
+
+\bibitem[Zuboff(2019)]{Zuboff2019}
+Zuboff, S.
+\newblock {\em The Age of Surveillance Capitalism: The Fight for a Human Future
+  at the New Frontier of Power}; PublicAffairs: New York,  2019.
+
+\bibitem[Lyon(2007)]{Lyon2007Surveillance}
+Lyon, D.
+\newblock {\em Surveillance Studies: An Overview}; Polity Press: Cambridge, UK,
+   2007.
+
+\bibitem[Foucault(1977)]{Foucault1977DisciplinePunish}
+Foucault, M.
+\newblock {\em Discipline and Punish: The Birth of the Prison}; Pantheon Books:
+  New York,  1977.
+\newblock Translated by Alan Sheridan; originally published 1975 in French.
+
+\bibitem[O'Neil(2016)]{ONeil2016WMD}
+O'Neil, C.
+\newblock {\em Weapons of Math Destruction: How Big Data Increases Inequality
+  and Threatens Democracy}; Crown: New York,  2016.
+
+\bibitem[Eubanks(2018)]{Eubanks2018AutomatingInequality}
+Eubanks, V.
+\newblock {\em Automating Inequality: How High-Tech Tools Profile, Police, and
+  Punish the Poor}; St. Martin's Press: New York,  2018.
+
+\bibitem[Hughes et~al.(2018)Hughes, Leibo, Phillips, Tuyls, Due{\~n}ez-Guzman,
+  Casta{\~n}eda, Dunning, Zhu, McKee, Koster,
+  et~al.]{Hughes2018InequityAversion}
+Hughes, E.; Leibo, J.Z.; Phillips, M.; Tuyls, K.; Due{\~n}ez-Guzman, E.A.;
+  Casta{\~n}eda, A.G.; Dunning, I.; Zhu, T.; McKee, K.; Koster, R.;  et~al.
+\newblock Inequity Aversion Improves Cooperation in Intertemporal Social
+  Dilemmas.
+\newblock In Proceedings of the Advances in Neural Information Processing
+  Systems (NeurIPS),  2018, pp. 3330--3340.
+
+\bibitem[Jaques et~al.(2019)Jaques, Lazaridou, Hughes, Gulcehre, Ortega,
+  Strouse, Leibo, and de~Freitas]{Jaques2019SocialInfluence}
+Jaques, N.; Lazaridou, A.; Hughes, E.; Gulcehre, C.; Ortega, P.A.; Strouse, D.;
+  Leibo, J.Z.; de~Freitas, N.
+\newblock Social Influence as Intrinsic Motivation for Multi-Agent Deep
+  Reinforcement Learning.
+\newblock In Proceedings of the International Conference on Machine Learning
+  (ICML),  2019, pp. 3040--3049.
+
+\bibitem[Binns et~al.(2018)Binns, Van~Kleek, Veale, Lyngs, Zhao, and
+  Shadbolt]{Binns2018CHI}
+Binns, R.; Van~Kleek, M.; Veale, M.; Lyngs, U.; Zhao, J.; Shadbolt, N.
+\newblock ``It's Reducing a Human Being to a Percentage'': Perceptions of
+  Justice in Algorithmic Decisions.
+\newblock In Proceedings of the 2018 CHI Conference on Human Factors in
+  Computing Systems (CHI '18). ACM,  2018, pp. 1--14.
+\newblock {\url{https://doi.org/10.1145/3173574.3173951}}.
+
+\bibitem[Lee et~al.(2019)Lee, Kusbit, Metsky, and
+  Dabbish]{Lee2019ProceduralJustice}
+Lee, M.K.; Kusbit, D.; Metsky, E.; Dabbish, L.
+\newblock Procedural Justice in Algorithmic Fairness: Leveraging Transparency
+  and Outcome Control for Fair Algorithmic Mediation.
+\newblock {\em Proceedings of the ACM on Human-Computer Interaction} {\bf
+  2019}, {\em 3},~182:1--182:26.
+\newblock {\url{https://doi.org/10.1145/3359284}}.
+
+\bibitem[Dietvorst et~al.(2015)Dietvorst, Simmons, and Massey]{Dietvorst2015}
+Dietvorst, B.J.; Simmons, J.P.; Massey, C.
+\newblock Algorithm Aversion: People Erroneously Avoid Algorithms After Seeing
+  Them Err.
+\newblock {\em Journal of Experimental Psychology: General} {\bf 2015}, {\em
+  144},~114--126.
+\newblock {\url{https://doi.org/10.1037/xge0000033}}.
+
+\bibitem[Burrell(2016)]{Burrell2016Opacity}
+Burrell, J.
+\newblock How the Machine ``Thinks'': Understanding Opacity in Machine Learning
+  Algorithms.
+\newblock {\em Big Data \& Society} {\bf 2016}, {\em 3},~1--12.
+\newblock {\url{https://doi.org/10.1177/2053951715622512}}.
+
+\bibitem[Selbst et~al.(2019)Selbst, boyd, Friedler, Venkatasubramanian, and
+  Vertesi]{Selbst2019FairnessAbstraction}
+Selbst, A.D.; boyd, d.; Friedler, S.A.; Venkatasubramanian, S.; Vertesi, J.
+\newblock Fairness and Abstraction in Sociotechnical Systems.
+\newblock In Proceedings of the 2019 Conference on Fairness, Accountability,
+  and Transparency (FAT* '19). ACM,  2019, pp. 59--68.
+\newblock {\url{https://doi.org/10.1145/3287560.3287598}}.
+
+\bibitem[Mittelstadt(2019)]{Mittelstadt2019Principles}
+Mittelstadt, B.
+\newblock Principles Alone Cannot Guarantee Ethical {AI}.
+\newblock {\em Nature Machine Intelligence} {\bf 2019}, {\em 1},~501--507.
+\newblock {\url{https://doi.org/10.1038/s42256-019-0114-4}}.
+
+\bibitem[Hausman and Welch(2010)]{HausmanWelch2010Nudge}
+Hausman, D.M.; Welch, B.
+\newblock Debate: To Nudge or Not to Nudge.
+\newblock {\em Journal of Political Philosophy} {\bf 2010}, {\em 18},~123--136.
+\newblock {\url{https://doi.org/10.1111/j.1467-9760.2009.00351.x}}.
+
+\bibitem[Hamilton(1964)]{Hamilton1964}
+Hamilton, W.D.
+\newblock The Genetical Evolution of Social Behaviour. I.
+\newblock {\em Journal of Theoretical Biology} {\bf 1964}, {\em 7},~1--16.
+
+\bibitem[Trivers(1971)]{Trivers1971}
+Trivers, R.L.
+\newblock The Evolution of Reciprocal Altruism.
+\newblock {\em Quarterly Review of Biology} {\bf 1971}, {\em 46},~35--57.
+
+\bibitem[Axelrod and Hamilton(1981)]{AxelrodHamilton1981}
+Axelrod, R.; Hamilton, W.D.
+\newblock The Evolution of Cooperation.
+\newblock {\em Science} {\bf 1981}, {\em 211},~1390--1396.
+
+\bibitem[Nowak(2006)]{Nowak2006}
+Nowak, M.A.
+\newblock Five Rules for the Evolution of Cooperation.
+\newblock {\em Science} {\bf 2006}, {\em 314},~1560--1563.
+
+\bibitem[Fehr and G{\"a}chter(2002)]{FehrGachter2002}
+Fehr, E.; G{\"a}chter, S.
+\newblock Altruistic Punishment in Humans.
+\newblock {\em Nature} {\bf 2002}, {\em 415},~137--140.
+
+\bibitem[Resnick et~al.(2000)Resnick, Zeckhauser, Friedman, and
+  Kuwabara]{Resnick2000Reputation}
+Resnick, P.; Zeckhauser, R.; Friedman, E.; Kuwabara, K.
+\newblock Reputation Systems.
+\newblock {\em Communications of the ACM} {\bf 2000}, {\em 43},~45--48.
+\newblock {\url{https://doi.org/10.1145/355112.355122}}.
+
+\bibitem[Esteva et~al.(2000)Esteva, Rodríguez-Aguilar, Arcos, Sierra, and
+  Garcia]{Esteva2000InstitutionalisingOpenMAS}
+Esteva, M.; Rodríguez-Aguilar, J.A.; Arcos, J.L.; Sierra, C.; Garcia, P.
+\newblock Institutionalising Open Multi-Agent Systems.
+\newblock In Proceedings of the Fourth International Conference on MultiAgent
+  Systems (ICMAS 2000). IEEE,  2000, pp. 381--383.
+\newblock {\url{https://doi.org/10.1109/ICMAS.2000.858485}}.
+
+\bibitem[Agapiou et~al.(2022)Agapiou, Vezhnevets, Due{\~n}ez-Guzman, Matyas,
+  Mao, Sunehag, Koster, Madhushani, Kopparapu, Comanescu,
+  et~al.]{Agapiou2022MeltingPot2}
+Agapiou, J.P.; Vezhnevets, A.S.; Due{\~n}ez-Guzman, E.A.; Matyas, J.; Mao, Y.;
+  Sunehag, P.; Koster, R.; Madhushani, U.; Kopparapu, K.; Comanescu, R.;
+  et~al.
+\newblock Melting Pot 2.0.
+\newblock arXiv:2211.13746,  2022.
+\newblock Technical report / preprint.
+
+\bibitem[Christoffersen et~al.(2023)Christoffersen, Haupt, and
+  Hadfield-Menell]{Haupt2023Contracts}
+Christoffersen, P.J.K.; Haupt, A.A.; Hadfield-Menell, D.
+\newblock Get It in Writing: Formal Contracts Mitigate Social Dilemmas in
+  Multi-Agent RL.
+\newblock In Proceedings of the 22nd International Conference on Autonomous
+  Agents and Multiagent Systems (AAMAS),  2023, pp. 448--456.
+
+\bibitem[Boella et~al.(2006)Boella, van~der Torre, and
+  Verhagen]{Boella2006NormativeMAS}
+Boella, G.; van~der Torre, L.; Verhagen, H.
+\newblock Introduction to Normative Multiagent Systems.
+\newblock {\em Computational and Mathematical Organization Theory} {\bf 2006},
+  {\em 12},~71--79.
+
+\bibitem[Dell'Anna et~al.(2020)Dell'Anna, Dastani, and
+  Dalpiaz]{DellAnna2020Runtime}
+Dell'Anna, D.; Dastani, M.; Dalpiaz, F.
+\newblock Runtime revision of sanctions in normative multi-agent systems.
+\newblock {\em Autonomous Agents and Multi-Agent Systems} {\bf 2020}, {\em
+  34},~1--40.
+\newblock {\url{https://doi.org/10.1007/s10458-020-09465-8}}.
+
+\bibitem[Centeno et~al.(2011)Centeno, Billhardt, et~al.]{Centeno2011Adaptive}
+Centeno, R.; Billhardt, H.;  et~al.
+\newblock An adaptive sanctioning mechanism for open multi-agent systems
+  regulated by norms.
+\newblock In Proceedings of the 2011 IEEE 23rd International Conference on
+  Tools with Artificial Intelligence,  2011, pp. 1--8.
+\newblock {\url{https://doi.org/10.1109/ICTAI.2011.10}}.
+
+\bibitem[Christoffersen et~al.(2024)]{Christoffersen2024Contracts}
+Christoffersen, P.;  et~al.
+\newblock Formal contracts mitigate social dilemmas in multi-agent
+  reinforcement learning.
+\newblock {\em Autonomous Agents and Multi-Agent Systems} {\bf 2024}, {\em
+  38},~1--30.
+\newblock {\url{https://doi.org/10.1007/s10458-024-09682-5}}.
+
+\bibitem[Lyons et~al.(2021)Lyons, Velloso, and Miller]{Lyons2021Contestability}
+Lyons, H.; Velloso, E.; Miller, T.
+\newblock Conceptualising contestability: Perspectives on contesting
+  algorithmic decisions.
+\newblock {\em Proceedings of the ACM on Human-Computer Interaction} {\bf
+  2021}, {\em 5},~1--25.
+\newblock {\url{https://doi.org/10.1145/3449180}}.
+
+\bibitem[Yurrita et~al.(2025)Yurrita, Verma, Balayn, and
+  Alfrink]{Yurrita2025Contestability}
+Yurrita, M.; Verma, H.; Balayn, A.; Alfrink, K.
+\newblock Identifying Algorithmic Decision Subjects' Needs for Meaningful
+  Contestability.
+\newblock In Proceedings of the 2025 CHI Conference on Human Factors in
+  Computing Systems,  2025.
+\newblock {\url{https://doi.org/10.1145/3757415}}.
+
+\bibitem[Zhao et~al.(2025)]{Zhao2025HumanAI}
+Zhao, C.;  et~al.
+\newblock Human-AI Interaction Design Standards.
+\newblock {\em arXiv preprint arXiv:2503.16472} {\bf 2025}.
+
+\bibitem[Longoni et~al.(2019)Longoni, Bonezzi, and Morewedge]{Longoni2019}
+Longoni, C.; Bonezzi, A.; Morewedge, C.K.
+\newblock Resistance to Medical Artificial Intelligence.
+\newblock {\em Journal of Consumer Research} {\bf 2019}, {\em 46},~629--650.
+\newblock {\url{https://doi.org/10.1093/jcr/ucz013}}.
+
+\bibitem[Winfield and Jirotka(2017)]{WinfieldJirotka2017}
+Winfield, A.F.T.; Jirotka, M.
+\newblock The Ethical Black Box: A Proposal for the Recording of Ethical
+  Decision Making in Robots and Autonomous Systems.
+\newblock In Proceedings of the Towards Autonomous Robotic Systems. Springer,
+  2017, pp. 262--273.
+\newblock {\url{https://doi.org/10.1007/978-3-319-64107-2_21}}.
+
+\bibitem[Metcalf et~al.(2021)Metcalf, Moss, Watkins, Singh, and
+  Elish]{Metcalf2021AIA}
+Metcalf, J.; Moss, E.; Watkins, E.A.; Singh, R.; Elish, M.C.
+\newblock Algorithmic Impact Assessments and Accountability: The
+  Co-construction of Impacts.
+\newblock In Proceedings of the 2021 ACM Conference on Fairness,
+  Accountability, and Transparency (FAccT '21). ACM,  2021, pp. 1--19.
+\newblock {\url{https://doi.org/10.1145/3442188.3445935}}.
+
+\bibitem[Selbst(2021)]{Selbst2021AIA}
+Selbst, A.D.
+\newblock An Institutional View of Algorithmic Impact Assessments.
+\newblock {\em Harvard Journal of Law \& Technology} {\bf 2021}, {\em
+  35},~117--191.
+
+\bibitem[Sandvig et~al.(2014)Sandvig, Hamilton, Karahalios, and
+  Langbort]{Sandvig2014AuditingAlgorithms}
+Sandvig, C.; Hamilton, K.; Karahalios, K.; Langbort, C.
+\newblock Auditing Algorithms: Research Methods for Detecting Discrimination on
+  Internet Platforms.
+\newblock In Proceedings of the 64th Annual Meeting of the International
+  Communication Association (ICA),  2014.
+\newblock Data and Discrimination Preconference.
+
+\bibitem[Jobin et~al.(2019)Jobin, Ienca, and Vayena]{Jobin2019EthicsGuidelines}
+Jobin, A.; Ienca, M.; Vayena, E.
+\newblock The Global Landscape of {AI} Ethics Guidelines.
+\newblock {\em Nature Machine Intelligence} {\bf 2019}, {\em 1},~389--399.
+\newblock {\url{https://doi.org/10.1038/s42256-019-0088-2}}.
+
+\bibitem[{National Institute of Standards and Technology}(2023)]{NIST2023AIRMF}
+{National Institute of Standards and Technology}.
+\newblock Artificial Intelligence Risk Management Framework ({AI RMF}) 1.0.
+\newblock NIST AI 100-1,  2023.
+\newblock {\url{https://doi.org/10.6028/NIST.AI.100-1}}.
+
+\bibitem[{ISO/IEC}(2023)]{ISO23894}
+{ISO/IEC}.
+\newblock {ISO/IEC} 23894:2023 --- Artificial intelligence --- Guidance on risk
+  management,  2023.
+\newblock International Organization for Standardization / International
+  Electrotechnical Commission.
+
+\bibitem[{OECD}(2019)]{OECDAI2019}
+{OECD}.
+\newblock OECD Recommendation on Artificial Intelligence.
+\newblock OECD Legal Instruments,  2019.
+
+\bibitem[{European Parliament and Council of the European
+  Union}(2024)]{EU2024AIAct}
+{European Parliament and Council of the European Union}.
+\newblock Regulation (EU) 2024/1689 laying down harmonised rules on artificial
+  intelligence ({Artificial Intelligence Act}).
+\newblock Official Journal of the European Union, OJ L 2024/1689 (12 July
+  2024),  2024.
+
+\bibitem[Shneiderman(2020)]{Shneiderman2020HCAI}
+Shneiderman, B.
+\newblock Human-Centered Artificial Intelligence: Reliable, Safe \&
+  Trustworthy.
+\newblock {\em International Journal of Human--Computer Interaction} {\bf
+  2020}, {\em 36},~495--504.
+
+\bibitem[Santoni~de Sio and van~den Hoven(2018)]{Santoni2018MHC}
+Santoni~de Sio, F.; van~den Hoven, J.
+\newblock Meaningful Human Control over Autonomous Systems: A Philosophical
+  Account.
+\newblock {\em Frontiers in Robotics and AI} {\bf 2018}, {\em 5},~15.
+\newblock {\url{https://doi.org/10.3389/frobt.2018.00015}}.
+
+\bibitem[Floridi et~al.(2018)Floridi, Cowls, Beltrametti, Chatila, Chazerand,
+  Dignum, Luetge, Madelin, Pagallo, Rossi, Schafer, Valcke, and
+  Vayena]{Floridi2018AI4People}
+Floridi, L.; Cowls, J.; Beltrametti, M.; Chatila, R.; Chazerand, P.; Dignum,
+  V.; Luetge, C.; Madelin, R.; Pagallo, U.; Rossi, F.;  et~al.
+\newblock {AI4People}---An Ethical Framework for a Good {AI} Society.
+\newblock {\em Minds and Machines} {\bf 2018}, {\em 28},~689--707.
+\newblock {\url{https://doi.org/10.1007/s11023-018-9482-5}}.
+
+\bibitem[Wachter et~al.(2018)Wachter, Mittelstadt, and
+  Russell]{Wachter2018Counterfactual}
+Wachter, S.; Mittelstadt, B.; Russell, C.
+\newblock Counterfactual Explanations without Opening the Black Box: Automated
+  Decisions and the {GDPR}.
+\newblock {\em Harvard Journal of Law \& Technology} {\bf 2018}, {\em
+  31},~842--887.
+
+\bibitem[Friedman et~al.(2002)Friedman, Kahn, and
+  Borning]{FriedmanKahnBorning2002}
+Friedman, B.; Kahn, P.H.; Borning, A.
+\newblock Value Sensitive Design: Theory and Methods.
+\newblock Technical report, University of Washington,  2002.
+\newblock Technical Report.
+
+\bibitem[Schulman et~al.(2017)Schulman, Wolski, Dhariwal, Radford, and
+  Klimov]{Schulman2017PPO}
+Schulman, J.; Wolski, F.; Dhariwal, P.; Radford, A.; Klimov, O.
+\newblock Proximal Policy Optimization Algorithms.
+\newblock arXiv:1707.06347,  2017.
+
+\end{thebibliography}

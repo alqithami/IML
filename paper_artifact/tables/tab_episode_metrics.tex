@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\caption{Converged episode-level metrics (mean $\pm$ std over 5 seeds, last 200 episodes). Bold indicates best among the reported conditions for each environment.}
+\label{tab:episode_metrics}
+\centering
+\footnotesize
+\begin{tabular}{llrr}
+\toprule
+\textbf{Environment} & \textbf{Condition} & \textbf{Mean Return} & \textbf{Gini Coefficient} \\
+\midrule
+  Cleanup & Baseline (PPO) & -0.3 $\pm$ 0.5 & 0.1807 $\pm$ 0.0933 \\
+   & Social Influence & \textbf{458.4 $\pm$ 63.7} & \textbf{0.0279 $\pm$ 0.0105} \\
+   & IML (Full) & -7.6 $\pm$ 0.2 & 0.4001 $\pm$ 0.0054 \\
+\midrule
+  Harvest & Baseline (PPO) & \textbf{52.2 $\pm$ 4.1} & \textbf{0.1831 $\pm$ 0.0359} \\
+   & IML (Full) & 41.1 $\pm$ 4.4 & 0.1922 $\pm$ 0.0190 \\
+\bottomrule
+\end{tabular}
+\end{table}

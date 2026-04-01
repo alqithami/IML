@@ -1,0 +1,26 @@
+\begin{table}[htbp]
+\centering
+\caption{Per-agent fairness analysis of IML enforcement events across five training seeds. Sanctions/ep.\ reports the mean number of pre-review flagged sanction events per agent per episode. TP/ep. and FP/ep. partition those flagged events into true violations and false positives, respectively. Overturn Rate is the fraction of flagged events reversed by the review mechanism, so net upheld sanctions are approximately Sanctions/ep.\ $\times$ $(1-\text{Overturn Rate})$. Gini coefficients near zero indicate near-perfect equity in the distribution of pre-review enforcement burden across agents.}
+\label{tab:fairness}
+\begin{tabular}{llccccc}
+\toprule
+\textbf{Env.} & \textbf{Agent} & \textbf{Sanctions/ep.} & \textbf{TP/ep.} & \textbf{FP/ep.} & \textbf{FP Rate} & \textbf{Overturn Rate} \\
+\midrule
+Cleanup & A0 & 20.5 $\pm$ 0.3 & 0.57 & 19.98 & 0.972 $\pm$ 0.010 & 0.195 $\pm$ 0.004 \\
+Cleanup & A1 & 20.7 $\pm$ 0.1 & 0.60 & 20.08 & 0.971 $\pm$ 0.012 & 0.194 $\pm$ 0.003 \\
+Cleanup & A2 & 20.5 $\pm$ 0.3 & 0.59 & 19.96 & 0.971 $\pm$ 0.011 & 0.195 $\pm$ 0.002 \\
+Cleanup & A3 & 20.6 $\pm$ 0.3 & 0.58 & 20.05 & 0.972 $\pm$ 0.011 & 0.195 $\pm$ 0.003 \\
+Cleanup & A4 & 20.5 $\pm$ 0.2 & 0.55 & 19.94 & 0.973 $\pm$ 0.012 & 0.193 $\pm$ 0.002 \\
+\midrule
+Harvest & A0 & 20.7 $\pm$ 0.1 & 0.68 & 20.03 & 0.967 $\pm$ 0.006 & 0.195 $\pm$ 0.003 \\
+Harvest & A1 & 20.7 $\pm$ 0.1 & 0.72 & 19.98 & 0.965 $\pm$ 0.005 & 0.191 $\pm$ 0.004 \\
+Harvest & A2 & 20.7 $\pm$ 0.2 & 0.69 & 20.06 & 0.967 $\pm$ 0.005 & 0.195 $\pm$ 0.003 \\
+Harvest & A3 & 20.7 $\pm$ 0.2 & 0.72 & 19.99 & 0.965 $\pm$ 0.006 & 0.193 $\pm$ 0.003 \\
+Harvest & A4 & 20.6 $\pm$ 0.3 & 0.67 & 19.95 & 0.967 $\pm$ 0.005 & 0.194 $\pm$ 0.001 \\
+\midrule
+Cleanup & \textit{Gini} & 0.0040 $\pm$ 0.0005 & -- & -- & 0.0039 $\pm$ 0.0004 & -- \\
+\midrule
+Harvest & \textit{Gini} & 0.0033 $\pm$ 0.0013 & -- & -- & 0.0033 $\pm$ 0.0013 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}

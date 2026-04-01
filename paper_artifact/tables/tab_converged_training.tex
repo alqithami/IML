@@ -1,0 +1,27 @@
+\begin{table}[htbp]
+\caption{Converged training metrics (mean $\pm$ std over 5 seeds, last 20\% of training). Bold indicates best per environment.}
+\label{tab:converged_training}
+\centering
+\footnotesize
+\begin{tabular}{llrrr}
+\toprule
+\textbf{Environment} & \textbf{Condition} & \textbf{Entropy} & \textbf{Value Loss} & \textbf{Clip Frac.} \\
+\midrule
+  Cleanup & Baseline (PPO) & 0.510 $\pm$ 0.134 & 0.0623 $\pm$ 0.0819 & 0.0829 \\
+   & Inequity Aversion & 0.374 $\pm$ 0.357 & 53.71 $\pm$ 80.05 & 0.0484 \\
+   & Social Influence & 0.288 $\pm$ 0.086 & 3.12 $\pm$ 0.24 & 0.0362 \\
+   & Monitor Only & 0.478 $\pm$ 0.299 & 5.64 $\pm$ 12.48 & 0.0684 \\
+   & Sanction (no review) & 1.210 $\pm$ 0.240 & 0.0695 $\pm$ 0.0390 & 0.0987 \\
+   & High Review (p=0.8) & 1.276 $\pm$ 0.322 & \textbf{0.0528 $\pm$ 0.0218} & 0.0623 \\
+   & IML (Full) & \textbf{1.338 $\pm$ 0.032} & 0.1091 $\pm$ 0.0233 & 0.0967 \\
+\midrule
+  Harvest & Baseline (PPO) & 0.658 $\pm$ 0.077 & 0.4673 $\pm$ 0.0347 & 0.0615 \\
+   & Inequity Aversion & 0.218 $\pm$ 0.251 & 68167.38 $\pm$ 151973.62 & 0.0203 \\
+   & Social Influence & 0.140 $\pm$ 0.314 & 16.07 $\pm$ 17.57 & 0.0143 \\
+   & Monitor Only & 0.303 $\pm$ 0.192 & 3.50 $\pm$ 7.81 & 0.0390 \\
+   & Sanction (no review) & 1.421 $\pm$ 0.007 & 0.0410 $\pm$ 0.0155 & 0.0530 \\
+   & High Review (p=0.8) & \textbf{1.514 $\pm$ 0.011} & \textbf{0.0206 $\pm$ 0.0132} & 0.0346 \\
+   & IML (Full) & 1.251 $\pm$ 0.059 & 0.4524 $\pm$ 0.0835 & 0.0562 \\
+\bottomrule
+\end{tabular}
+\end{table}

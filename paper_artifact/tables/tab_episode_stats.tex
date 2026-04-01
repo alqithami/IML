@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\caption{Statistical comparison of episode-level metrics (converged returns and Gini). Mann-Whitney $U$ test.}
+\label{tab:episode_stats}
+\centering
+\footnotesize
+\begin{tabular}{llrrrr}
+\toprule
+\textbf{Env.} & \textbf{Comparison} & \textbf{Return $U$} & \textbf{Return $p$} & \textbf{Gini $U$} & \textbf{Gini $p$} \\
+\midrule
+  Cleanup & IML vs Baseline (PPO) & 0 & 0.0119 & 25 & 0.0119 \\
+  Cleanup & IML vs Social Influence & 0 & 0.0119 & 25 & 0.0119 \\
+  Harvest & IML vs Baseline (PPO) & 1 & 0.0159 & 17 & 0.4206 \\
+\bottomrule
+\end{tabular}
+\end{table}
