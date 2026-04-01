@@ -8,6 +8,7 @@ import numpy as np
 
 from .ledger import LedgerWriter
 from .rules import NormRule, NoPunishmentBeamRule
+from ..envs.ssd_env import extract_obs
 
 
 @dataclass
@@ -112,12 +113,14 @@ class IMLWrapper:
 
         # Evaluate each rule per agent and apply detection+sanctions.
         for agent_id, act in actions.items():
-            obs0 = prev_obs.get(agent_id)
-            if obs0 is None:
+            obs0_raw = prev_obs.get(agent_id)
+            if obs0_raw is None:
                 # If missing, try to fallback to next_obs (less correct, but avoids crash)
-                obs0 = next_obs.get(agent_id)
-            if obs0 is None:
+                obs0_raw = next_obs.get(agent_id)
+            if obs0_raw is None:
                 continue
+            # SSD returns obs as {"curr_obs": ndarray, ...}; extract the array
+            obs0 = extract_obs(obs0_raw)
 
             r0 = float(rewards.get(agent_id, 0.0))
             info0 = infos.get(agent_id, {})
