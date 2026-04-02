@@ -10,7 +10,7 @@ repository-code: "https://github.com/alqithami/IML"
 license: "MIT"
 preferred-citation:
   type: article
-  title: "From Behavioral Influence to Accountable Institutions: Institutional Monitoring and Ledger Mechanisms for Cooperative Human--AI Systems"
+  title: "Institutional Monitoring and Ledgers for Cooperative Human–AI Systems"
   authors:
     - family-names: "Alqithami"
       given-names: "Saad"
