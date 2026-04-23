@@ -1,7 +1,7 @@
 # IML: Institutional Monitoring & Ledger for Sequential Social Dilemmas
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![arXiv](https://img.shields.io/badge/arXiv-2604.xxxxxx-b31b1b.svg)](https://arxiv.org/)
+[![MDPI](https://img.shields.io/badge/arXiv-2604.xxxxxx-b31b1b.svg)](https://arxiv.org/)
 
 This repository contains a reference implementation of an **Institutional Monitoring and Ledger (IML)** wrapper for **Sequential Social Dilemma (SSD)** environments, with experiments in **Harvest** and **Cleanup**. IML keeps the underlying Markov game intact while adding an explicit institutional layer that can:
 
