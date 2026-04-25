@@ -1,8 +1,10 @@
 # IML: Institutional Monitoring & Ledger for Sequential Social Dilemmas
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![MDPI](https://img.shields.io/badge/arXiv-2604.xxxxxx-b31b1b.svg)](https://arxiv.org/)
-
+[![MDPI](https://img.shields.io/badge/MCA-10.3390/mca4225088-b31b1b.svg)](https://www.mdpi.com/journal/mca)
+<p align="center">
+  <img src="figures/graphical_abstract.png" width="520" alt="Graphical abstract for the IML framework">
+</p>
 This repository contains a reference implementation of an **Institutional Monitoring and Ledger (IML)** wrapper for **Sequential Social Dilemma (SSD)** environments, with experiments in **Harvest** and **Cleanup**. IML keeps the underlying Markov game intact while adding an explicit institutional layer that can:
 
 - monitor norm-relevant events,
@@ -12,9 +14,7 @@ This repository contains a reference implementation of an **Institutional Monito
 
 The repository accompanies the manuscript **“Institutional Monitoring and Ledgers for Cooperative Human–AI Systems.”**
 
-<p align="center">
-  <img src="figures/graphical_abstract.png" width="520" alt="Graphical abstract for the IML framework">
-</p>
+<img width="2752" height="1536" alt="IML_Framework_Graphical_Abstract" src="https://github.com/user-attachments/assets/abf607b0-40d2-4c7d-842b-fe848bb5e72d" />
 
 ## What is in this repository
 
@@ -315,9 +315,9 @@ If you use this repository, please cite the software artifact and the accompanyi
 
 @article{alqithami2026iml,
   author = {Alqithami, Saad},
-  title  = {Institutional Monitoring and Ledgers for Cooperative Human--AI Systems},
+  title  = {Institutional Monitoring and Ledgers for Cooperative Human–AI Systems: A Framework with Pilot Evidence},
   year   = {2026},
-  note   = {Manuscript under review}
+  note   = {Mathematical and Computational Applications}
 }
 
 @inproceedings{leibo2017multi,
