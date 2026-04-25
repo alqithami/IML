@@ -1,11 +1,18 @@
 # IML: Institutional Monitoring & Ledger for Sequential Social Dilemmas
 
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![MDPI](https://img.shields.io/badge/MCA-10.3390/mca4225088-b31b1b.svg)](https://www.mdpi.com/journal/mca)
+<p align="center">
+  <img src="figures/graphical_abstract.png" width="520" alt="Graphical abstract for the IML framework">
+</p>
+
 This repository contains the reference implementation and paper artifact for **Institutional Monitoring and Ledgers for Cooperative Human–AI Systems: A Framework with Pilot Evidence**.
 
 The code implements an **Institutional Monitoring and Ledger (IML)** wrapper for Sequential Social Dilemma environments, with experiments in **Harvest** and **Cleanup**. IML keeps the underlying Markov game intact while adding an explicit institutional layer that monitors norm-relevant events, records evidence in an auditable ledger, applies delayed sanctions or remedies, and exposes review/contestation as explicit mechanism parameters.
 
 <p align="center">
-  <img src="figures/graphical_abstract.png" width="500" alt="Graphical abstract for the IML framework">
+  <img width="600" alt="Graphical abstract for the IML framework" src="https://github.com/user-attachments/assets/abf607b0-40d2-4c7d-842b-fe848bb5e72d">
 </p>
 
 ---
