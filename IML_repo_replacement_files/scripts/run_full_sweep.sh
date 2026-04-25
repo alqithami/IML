@@ -1,28 +1,21 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Full experimental sweep for the manuscript artifact.
-#
+# Full experimental sweep for the IML paper artifact.
 # Conditions:
-#   1. baseline              — PPO only (no wrapper)
-#   2. ia                    — Inequity Aversion
-#   3. si                    — Social Influence
-#   4. monitor_only          — IML ablation: detection + ledger, no sanctions
-#   5. sanction_no_review    — IML ablation: detection + sanctions, no review
-#   6. iml                   — Full IML: detection + sanctions + review
-#   7. high_review           — IML with high review probability (0.8)
-#
+#   1. baseline — PPO only (no institutional wrapper)
+#   2. ia — Inequity Aversion
+#   3. si — Social Influence
+#   4. monitor_only — detection + ledger, no sanctions
+#   5. sanction_no_review — detection + sanctions, no review
+#   6. iml — full IML (detection + sanctions + review)
+#   7. high_review — IML with high review probability (0.8)
 # Environments: cleanup, harvest
 # Training seeds: 0, 1, 2, 3, 4
 # Evaluation seeds: 0, 1, 2, 3, 4
-# Evaluation episodes per seed: 50
-#
-# Usage:
-#   bash scripts/run_full_sweep.sh
 
 SEEDS=(0 1 2 3 4)
 EVAL_SEEDS=(0 1 2 3 4)
-EVAL_EPISODES=50
 
 CONFIGS=(
   # Cleanup
@@ -44,15 +37,14 @@ CONFIGS=(
   "configs/harvest_iml_high_review.yaml"
 )
 
-TOTAL=$(( ${#CONFIGS[@]} * ${#SEEDS[@]} ))
-COUNT=0
-
 echo "=============================="
 echo " IML Full Experimental Sweep"
-echo " ${#CONFIGS[@]} configs × ${#SEEDS[@]} training seeds = ${TOTAL} training runs"
-echo " Evaluation seeds: ${EVAL_SEEDS[*]} (${EVAL_EPISODES} episodes each)"
+echo " ${#CONFIGS[@]} configs × ${#SEEDS[@]} seeds = $(( ${#CONFIGS[@]} * ${#SEEDS[@]} )) training runs"
+echo " Evaluation seeds: ${EVAL_SEEDS[*]}"
 echo "=============================="
 
+TOTAL=$(( ${#CONFIGS[@]} * ${#SEEDS[@]} ))
+COUNT=0
 for CFG in "${CONFIGS[@]}"; do
   for SEED in "${SEEDS[@]}"; do
     COUNT=$((COUNT + 1))
@@ -69,7 +61,6 @@ echo "=============================="
 
 echo ""
 echo "Running evaluation sweep..."
-
 for RUN_DIR in runs/*/; do
   if [[ ! -f "${RUN_DIR}model.pt" ]]; then
     echo "[skip] No model.pt in $RUN_DIR"
@@ -80,7 +71,7 @@ for RUN_DIR in runs/*/; do
     echo "Evaluating: $RUN_DIR eval_seed=$ES"
     python -m iml_ssd.experiments.evaluate \
       --run_dir "$RUN_DIR" \
-      --episodes "$EVAL_EPISODES" \
+      --episodes 50 \
       --seed "$ES" \
       --out_suffix "_seed${ES}"
   done
