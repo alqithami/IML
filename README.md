@@ -2,7 +2,7 @@
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![MDPI](https://img.shields.io/badge/MCA-10.3390/mca4225088-b31b1b.svg)](https://www.mdpi.com/journal/mca)
+[![MDPI](https://img.shields.io/badge/MCA-10.3390/mca31030069-b31b1b.svg)](https://doi.org/10.3390/mca31030069)
 <p align="center">
   <img src="figures/graphical_abstract.png" width="520" alt="Graphical abstract for the IML framework">
 </p>
@@ -273,10 +273,17 @@ If you use this repository, please cite the software artifact and the accompanyi
 }
 
 @article{alqithami2026iml,
-  author  = {Alqithami, Saad},
-  title   = {Institutional Monitoring and Ledgers for Cooperative Human--AI Systems: A Framework with Pilot Evidence},
-  journal = {Mathematical and Computational Applications},
-  year    = {2026}
+  AUTHOR = {Alqithami, Saad},
+  TITLE = {Institutional Monitoring and Ledgers for Cooperative Human–AI Systems: A Framework with Pilot Evidence},
+  JOURNAL = {Mathematical and Computational Applications},
+  VOLUME = {31},
+  YEAR = {2026},
+  NUMBER = {3},
+  ARTICLE-NUMBER = {69},
+  URL = {https://www.mdpi.com/2297-8747/31/3/69},
+  ISSN = {2297-8747},
+  ABSTRACT = {Human–AI systems often involve repeated interaction among users, organizations, and AI components rather than isolated model outputs. In such settings, cooperation can be pursued either by changing agent incentives or by adding an explicit accountability layer. We formalize the Institutional Monitoring and Ledger (IML) framework, which augments a Markov game with monitoring, evidence logging, delayed settlement, and review while leaving the base dynamics unchanged. We derive conservative incentive checks that clarify how detection quality, review accuracy, settlement delay, and sanction size jointly shape deterrence and wrongful-penalty risk. We then provide pilot evidence in two canonical sequential social dilemmas, Harvest and Cleanup, using five agents, PPO training, five training seeds per condition, and comparisons against PPO, inequity aversion, social influence, and IML ablations. In these settings, IML avoided some of the optimization instability observed in the representative internalization baselines tested here, made monitoring error directly visible through ledger records, and showed how false positives can accumulate into a persistent welfare cost. Agent-level analyses in these symmetric environments found nearly uniform measured enforcement burden, while temporal analyses showed that late-stage enforcement is increasingly dominated by residual false positives. These results do not establish legitimacy in human-facing settings or deployment readiness. They instead position IML as a framework with pilot evidence for studying accountability mechanisms in cooperative human–AI systems and highlight measurement error, review design, and due process as central design constraints.},
+  DOI = {10.3390/mca31030069}
 }
 
 @inproceedings{leibo2017multi,
